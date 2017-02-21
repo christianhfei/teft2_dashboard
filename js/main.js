@@ -5,6 +5,9 @@ $(document).ready(function () {
         type: 'line',
         options: {
             title: 'Frequency of Flags',
+            legend: {
+                display: false
+            }
         },
         data: {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
@@ -14,6 +17,49 @@ $(document).ready(function () {
             data: [0, 3, 12, 22, 16, 14, 8, 11, 14, 6, 4],
             backgroundColor: "rgba(235,0,0,0.4)"
         }]
+        }
+    });
+
+    var timeAtEachStatusChart = document.getElementById('timeAtEachStatus').getContext('2d');
+    var timeAtEachStatusChart = new Chart(timeAtEachStatusChart, {
+        type: 'bar',
+        options: {
+            title: "Average Time per Status of Flag",
+            legend: {
+                display: false
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        },
+        data: {
+            labels: ["Flagged (days)", "Under Review (days)", "Pending DHMH Review (days)", "Pending Incident Escalation (days)"],
+            datasets: [
+                {
+                    backgroundColor: [
+                        'rgba(235, 0, 0, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1,
+                    data: [3, 4, 1, 1],
+                }
+            ]
         }
     });
 
