@@ -3,13 +3,17 @@ $(document).ready(function () {
     var frequencyOfFlagsChart = document.getElementById('frequencyOfFlagsChart').getContext('2d');
     var frequencyOfFlagsChart = new Chart(frequencyOfFlagsChart, {
         type: 'line',
+        options: {
+            title: 'Frequency of Flags',
+        },
         data: {
-            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
+             'September', 'November', 'December'],
             datasets: [{
-            label: 'apples',
-            data: [12, 19, 3, 17, 6, 3, 7],
-            backgroundColor: "rgba(153,255,51,0.4)"
-            }]
+            label: 'Number of Flags',
+            data: [0, 3, 12, 22, 16, 14, 8, 11, 14, 6, 4],
+            backgroundColor: "rgba(235,0,0,0.4)"
+        }]
         }
     });
 

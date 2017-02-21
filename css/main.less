@@ -1,3 +1,6 @@
+@green: #0E9C4C;
+@blue: #0F71A6;
+
 @-moz-document url-prefix() {
   fieldset { display: table-cell; }
 }
@@ -11,56 +14,132 @@ body{
 // Login Card Styles
 .panel{
     .panel-body{
-        h2{
+        h3{
             margin: 0 0 20px 0;
             font-weight: bold;
-            font-size: 190%;
+            font-size: 165%;
         }
 
+        h4{
+            display: inline-block;
+        }
+        span.pull-right{
+            margin-top: 10px;
+        }
         div.loginStats{
             font-weight: bold;
             color: #B8B8B8;            
             text-align: center;
-            div.successfulLogins{
-                padding-bottom: 5px;
-                border-bottom: 1px solid #a0a0a0;
-                span{
-                    color: #0E9C4C;
-                    display: block;
-                    font-size: 170%;
+            div.outerContainer{
+                position: relative;
+                top: 120px;
+                hr{
+                    margin: 5px auto;
+                }
+                div.successfulLogins{
+                    padding-bottom: 5px;
+                    span{
+                        color: @green;
+                        font-weight: bold;
+                        display: block;
+                        font-size: 210%;
+                    }
+                }
+                div.totalLogins{
+                    margin-top: 5px;
+                    span{
+                        display: block;
+                        font-weight: bold;
+                        color: @blue;
+                        font-size: 210%;
+                    }
                 }
             }
-            div.totalLogins{
-                margin-top: 5px;
-                span{
-                    display: block;
-                    color: #0F71A6;
-                    font-size: 170%;
-                }
-            }
+            
         }
         
         div.table-responsive{
-        table{
-            text-align: left;
-            color: #2E2E2E;            
-            caption{
-                color: #2E2E2E;
-                font-size: 110%;
-            }
-            tr{
-                    td{
-                        font-size: 100%;
-                    }
-                }
-            thead{
-                
-            }
-            tbody{
-
+            max-height: 500px;
+            overflow-y: auto !important;
+            table{
+                text-align: left;
+                color: #2E2E2E;            
             }
         }
     }
+
+    
+}
+
+div.daysToResolve, div.timeBetweenFlags{
+    div.panel.panel-default{
+        div.panel-body{
+            text-align: center;
+            div.row{
+                div{
+                    span{
+                        font-size: 160%;
+                        line-height: 20px;
+                        vertical-align: middle;
+                        span{
+                            
+                            font-weight: bold;
+                            color: @green;
+                        }            
+                    }
+                }
+            }
+        }
     }
+}   
+@media only screen and (max-width : 1199px) {
+
+    .panel{
+        .panel-body{
+            div.loginStats{
+                div.outerContainer{
+                    
+                    div.successfulLogins, div.totalLogins{
+                        span{
+                            font-size: 165%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width : 992px) {
+    .panel{
+        .panel-body{
+            div.loginStats{
+                div.outerContainer{
+                    position: static;
+                    div{
+                        span{
+                            font-size: 200%;
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
     
 }
