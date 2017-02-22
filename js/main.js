@@ -1,4 +1,13 @@
 $(document).ready(function () {
+
+    var setHeight = function(chart) {
+        var chartElement = document.getElementById(chart),
+            chartPanel = chartElement.parentNode.parentNode.parentNode,
+            chartSize = chartPanel.clientHeight + "px";
+        console.log(chartSize);
+        chartElement.style.height = chartSize;
+    };
+
     // Frequency/Flags Chart
     var frequencyOfFlagsChart = document.getElementById('frequencyOfFlagsChart').getContext('2d');
     var frequencyOfFlagsChart = new Chart(frequencyOfFlagsChart, {
@@ -9,13 +18,16 @@ $(document).ready(function () {
                 display: false
             }
         },
+        responsive: true,
+        maintainAspectRatio: false,
+        onResize: setHeight('frequencyOfFlagsChart'),
         data: {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
              'September', 'November', 'December'],
             datasets: [{
             label: 'Number of Flags',
             data: [0, 3, 12, 22, 16, 14, 8, 11, 14, 6, 4],
-            backgroundColor: "rgba(235,0,0,0.4)"
+            backgroundColor: "rgba(19,49,117,0.4)"
         }]
         }
     });
@@ -28,6 +40,8 @@ $(document).ready(function () {
             legend: {
                 display: false
             },
+            responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 yAxes: [{
                     ticks: {
@@ -37,7 +51,7 @@ $(document).ready(function () {
             }
         },
         data: {
-            labels: ["Flagged (days)", "Under Review (days)", "Pending DHMH Review (days)", "Pending Incident Escalation (days)"],
+            labels: ["Flagged (days)", "Under Review (days)", "Reviewed - No further action required", "Reviewed - Escalated to Incident"],
             datasets: [
                 {
                     backgroundColor: [
@@ -62,6 +76,11 @@ $(document).ready(function () {
             ]
         }
     });
+
+    
+
+    
+    
 
 
 });
