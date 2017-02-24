@@ -6,15 +6,21 @@
   fieldset { display: table-cell; }
 }
 
-
+.boxShadow{
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.30);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.30);
+    box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.30);
+}
 body{
-    background: #eee;
+    background: #D4D4D4;
 }
 
 
 
 // Login Card Styles
 .panel{
+    //border: 2px solid @blue;
+    .boxShadow;
     .panel-body{
         h3{
             margin: 0 0 20px 0;
@@ -30,9 +36,9 @@ body{
         }
 
         .canvasContainer{
-            position: relative;
-            height: 300px;
-            
+            box-sizing: border-box;
+            margin: 2%;
+            width: 96%;            
         }
 
         div.loginStats{
@@ -42,11 +48,9 @@ body{
             div.outerContainer{
                 position: relative;
                 top: 120px;
-                hr{
-                    margin: 5px auto;
-                }
                 div.successfulLogins{
                     padding-bottom: 5px;
+                    border-bottom: 1px solid rgba(220,220,220,.5);
                     span{
                         color: @green;
                         font-weight: bold;
@@ -103,7 +107,7 @@ div.daysToResolve, div.timeBetweenFlags{
             div.row{
                 div{
                     height: 80px;
-                    padding-top: 5%;
+                    padding-top: 4%;
                     span{
                         font-size: 150%;
                         line-height: 25px;
@@ -119,7 +123,12 @@ div.daysToResolve, div.timeBetweenFlags{
         }
     }
 }   
-@media only screen and (max-width : 1199px) {
+div.outerColumn{
+    padding: 0;
+}
+@media only screen and (max-width : 1260px) {
+
+    
 
     .panel{
         .panel-body{
