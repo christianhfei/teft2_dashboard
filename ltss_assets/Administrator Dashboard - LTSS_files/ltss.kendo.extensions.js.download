@@ -1,0 +1,180 @@
+﻿var ltss = new Object();
+
+ltss.kendoPanelBar = {
+    applyStyle: function () {
+        $(".auto-dynamicform-style, .task-panelbar-style").kendoPanelBar();
+        $('.auto-dynamicform-style li:nth-child(even)').addClass('alternate');
+    },
+    expand: function (selector) {
+        var bar = $(selector).data("kendoPanelBar");
+        $(selector).find(".k-item").each(function (i, item) {
+            bar.expand($(item), false);
+        });
+    },
+    expandAll: function (selector) {
+        if (selector) {
+            $(selector).each(function () {
+                var bar = $(this).data("kendoPanelBar");
+                if (bar != null) {
+                    $(selector + " .k-item").each(function (i, item) {
+                        bar.expand($(item), false);
+                    });
+                }
+            });
+        }
+        else {
+            $(".k-panelbar:not(.no-auto-expand)").each(function () {
+                var bar = $(this).data("kendoPanelBar");
+                if (bar != null) {
+                    $(".k-panelbar .k-item").each(function (i, item) {
+                        bar.expand($(item), false);
+                    });
+                }
+            });
+        }
+    },
+    expandFirst: function () {
+        var bar = $(".k-panelbar:not(.no-auto-expand)").data("kendoPanelBar");
+        if (bar != null) {
+            $(".k-panelbar .k-item").each(function (i, item) {
+                bar.expand($(item), false);
+            });
+        }
+    },
+    collapse: function (selector) {
+        var bar = $(selector).data("kendoPanelBar");
+        $(selector).find(".k-item").each(function (i, item) {
+            bar.collapse($(item), false);
+        });
+    },
+    collapseAll: function (selector) {
+        if (selector) {
+            var bar = $(selector).data("kendoPanelBar");
+            $(selector + " .k-item").each(function (i, item) {
+                bar.collapse($(item), false);
+            });
+        }
+        else {
+            var bar = $(".k-panelbar").data("kendoPanelBar");
+            $(".k-panelbar .k-item").each(function (i, item) {
+                bar.collapse($(item), false);
+            });
+        }
+    },
+
+    expandCollapseAllToggleButton: function (selector) {
+
+        $('.k-item').click(function () {
+            setTimeout(function () {
+                if ($(selector).children('.k-state-default').length > 0 && $(selector).children('.k-state-active').length == 0) {
+                    $('#expandCollapseAll').html("Expand All");
+                    $('#expandCollapseAll').addClass('isCollapsed');
+                }
+                else if ($(selector).children('.k-state-default').length == 0 && $(selector).children('.k-state-active').length > 0) {
+                    $('#expandCollapseAll').html("Collapse All");
+                    $('#expandCollapseAll').removeClass('isCollapsed');
+                }
+                else if ($(selector).children('.k-state-default:not(.ignoreExpandCollapseState)').length == 0 && $(selector).children('.k-state-active').length > 0 && $(selector).children('.ignoreExpandCollapseState.k-state-default').length > 0) {
+                    $('#expandCollapseAll').html("Collapse All");
+                    $('#expandCollapseAll').removeClass('isCollapsed');
+                }
+            }, 250);
+        });
+
+        if ($(selector).hasClass('no-auto-expand')) {
+            $('#expandCollapseAll').html("Expand All");
+            $('#expandCollapseAll').addClass('isCollapsed');
+        }
+        else {
+            $('#expandCollapseAll').html("Collapse All");
+        }
+
+        $('#expandCollapseAll').click(function () {
+            if ($('#expandCollapseAll').hasClass('isCollapsed')) {
+                $(this).html("Collapse All");
+                ltss.kendoPanelBar.expandAll(selector);
+                ltssPanelBar.expandAll(selector);
+                $(this).removeClass('isCollapsed');
+            }
+            else {
+                $(this).html("Expand All");
+                ltss.kendoPanelBar.collapseAll(selector);
+                ltssPanelBar.collapseAll(selector);
+                $(this).addClass('isCollapsed');
+            }
+        });
+
+
+    }
+};
+
+ltss.kendo = {
+	dateToDatePicker: function (selector) {
+		if (selector) {
+			$(selector).kendoDatePicker({ format: "@CommonLabels.Format_Date" });
+		} else {
+		    $('.date[data-role != "datepicker"]').each(function () {
+
+		        var today = new Date();
+
+				var datePickerOpts = {
+					format: "MM/dd/yyyy"
+				};
+
+		        //If input has class "noFuturDate", set max date options to 'today'. NOTE: option will be overridden by 'data-datepicker-options' attribute (aka, inline options)
+				if ($(this).is('.noFutureDate')) {
+				    $.extend(datePickerOpts, { max: today })
+				}
+		        //If input has class "currentOrFutureDate", set max date options to 'today'. NOTE: option will be overridden by 'data-datepicker-options' attribute (aka, inline options)
+				if ($(this).is('.currentOrFutureDate')) {
+				    $.extend(datePickerOpts, { min: today });
+				}
+
+				if ($(this).data('dateobj')) {
+					datePickerOpts.value = new Date($(this).data('dateobj'));
+				}
+				else if ($(this).data('initdate')) {
+				    if ($(this).data('initdate') == 'today') {
+				        datePickerOpts.value = new Date();
+				    }
+				}
+
+				$(this).kendoDatePicker(datePickerOpts);
+
+				if ($('.genericform-style :input').not('[type=hidden]').first().hasClass('date')){
+				    $(this).focus();
+				}
+			})
+		}
+	}
+};
+
+//Methods below will restrict and release tabbing cycling within the Kendow Windows. For 508.
+ltss.kendoWindow = {
+
+    restrictTabbing: function (elem) {
+        if (!elem) {
+            console.error("Instance of the Kendow Window is not being passed. Pass exactly as specified below.\n" +
+                "\t activate: function(){\n" +
+                "\t\t  var self = this;\n" +
+                "\t\t  ltss.kendoWindow.restrictTabbing(self);\n" +
+            "\t }"
+            )
+        } else {
+            var windowElement = elem.wrapper,
+                windowContent = elem.element;
+
+            $(document).on("keydown.kendoWindow", function (e) {
+                var focusedElement = $(document.activeElement);
+                if (e.keyCode == kendo.keys.TAB && focusedElement.closest(windowElement).length == 0) {
+                    windowContent.focus();
+                }
+            });
+        }
+    }, 
+     releaseTabbing : function() {
+        $(document).off("keydown.kendoWindow");
+     }
+
+}
+

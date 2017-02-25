@@ -1,0 +1,205 @@
+ltss.overlay = function () {
+
+    function showWorkflowActionWindow(config) {
+        config.contentSelector = '#divWorkflowAction';
+        if ($('#divWorkflowAction').length > 0) {
+            if (config.msg != null && config.msg.trim() != "") {
+                $('#divWorkflowAction').find('#msg').show().html(config.msg);
+            }
+            $('#divWorkflowAction').find('#workflowActionHeader').html(config.header);
+
+
+            $('#divWorkflowAction').find('#formWorkflowAction').unbind("submit").submit(function () {
+                return true;
+            });
+
+            $('#divWorkflowAction #btnYes').unbind("click");
+
+            if (config.url) {
+
+                $('#divWorkflowAction').find('#formWorkflowAction').attr('action', config.url);
+                $('#divWorkflowAction #btnYes').click(function (e) {
+                    e.preventDefault();
+                    if ($("#formWorkflowAction").valid()) {
+                        //activateBlockUi();
+                        $('#formWorkflowAction').submit();
+                    } else {
+                        return false;
+                    }
+                    return false;
+                });
+            }
+
+            if (config.onYesFn) {
+                $('#divWorkflowAction').find('#formWorkflowAction').unbind("submit").submit(function () {
+                    return false;
+                });
+
+                $('#divWorkflowAction #btnYes').click(function () {
+                    config.onYesFn();
+                    close();
+                });
+            }
+
+            if (config.onNoFn) {
+                $('#divWorkflowAction #btnNo').unbind("click").click(function () {
+                    config.onNoFn();
+                    close();
+                });
+            } else {
+                $('#divWorkflowAction #btnNo').unbind("click").click(function () {
+                    $('#divWorkflowAction').find('#workFlowConfirmationComment').val('').keypress(); //keypress is for resetting the character limit count.
+                });
+            }
+
+
+
+            if (config.hideComment) {
+                $('#divWorkflowAction').find('#lblComment').hide();
+                $('#divWorkflowAction').find('#workFlowConfirmationComment').hide();
+            }
+            else {
+                $('#divWorkflowAction').find('#lblComment').show();
+                $('#divWorkflowAction').find('#workFlowConfirmationComment').show();
+                $('#divWorkflowAction').find('textarea').removeAttr("readonly").removeAttr("disabled");
+            }
+
+            if (config['notRequired'] && config['notRequired'] === true) {
+                $('#divWorkflowAction').find('#completeRequiredIndicator').hide();
+                $('#divWorkflowAction').find('#validationComment').removeAttr('data-valmsg-for');
+                $('#divWorkflowAction').find('#validationComment').hide();
+                $('#divWorkflowAction').find('#workFlowConfirmationComment').removeClass("required");
+            } else if (!$('#divWorkflowAction').find('#workFlowConfirmationComment').hasClass("required")) {
+                $('#divWorkflowAction').find('#workFlowConfirmationComment').addClass("required");
+                $('#divWorkflowAction').find('#validationComment').show();
+                $('#divWorkflowAction').find('#validationComment').attr('data-valmsg-for', 'comment');
+                $('#divWorkflowAction').find('#completeRequiredIndicator').show();
+            }
+
+            if (config['setEmpty'] && config['setEmpty'] === true) {
+                $('#divWorkflowAction').find('#workFlowConfirmationComment').val('');
+            }
+
+            show(config);
+        }
+        else {
+            console.log('Missing WorkflowActionConfirm Partial.  Please contact developer.');
+        }
+    }
+
+    var show = function (config) {
+        config.options = $.extend({}, {
+            afterShow: function () {
+                overlayActivate($($(this)[0].element));
+                if (!config.hideComment) {
+                    $('#divWorkflowAction').find('#workFlowConfirmationComment').focus();
+                }
+            }
+        }, config.options);
+
+        $.fancybox.open(config.contentSelector, config.options);
+    }
+
+    var confirm = function (cfg) {
+        var config = $.extend({}, cfg);
+
+        if (config.header == null) {
+            config.header = "Confirmation";
+        }
+
+        config.options = {
+            modal: true,
+            closeEffect: 'none',
+            helpers: {
+                overlay: {
+                    speedOut: 0
+                }
+            },
+            beforeShow: function () {
+                if (config.htmlContent != null && config.htmlContent.trim() != "") {
+
+                    //Original content is "detached" then "appended to" the dialog body. (For htmlContent only)
+                    var html = $(config.htmlContent).children().detach(),
+                        dialogBody = $('#divWorkflowAction').find('#workflowActionHtmlContent');
+
+                    html.appendTo(dialogBody);
+                    dialogBody.show();
+
+
+                    $(this.element).find(".complete-required").completeRequired();
+                    $(this.element).find(".selection-required").selectionRequired();
+                    $(this.element).find(".submit-required").submitRequired();
+                    $(this.element).find(".selection-submit-required").selectionSubmitRequired();
+
+                }
+            },
+            afterShow: function () {
+                overlayActivate($($(this)[0].element));
+                if (!config.hideComment) {
+                    $('#divWorkflowAction').find('#workFlowConfirmationComment').focus();
+                }
+                initDynamicInputWidth();//Added 08/19/2014 - LN
+
+            },
+            height: cfg.height,
+            minHeight: cfg.minHeight,
+            afterClose: function () {
+
+                if (config.htmlContent != null && config.htmlContent.trim() != "") {
+                    //Original content is "detached" from the dialog body then re-"appended to" its original location. (For htmlContent only)
+                    var dialogBody = $('#divWorkflowAction').find('#workflowActionHtmlContent'),
+                        originalPlacement = $(config.htmlContent),
+                        html = $(dialogBody).children().detach();
+
+                    html.appendTo(originalPlacement);
+                    dialogBody.hide();
+                }
+            }
+        };
+
+        showWorkflowActionWindow(config);
+    };
+
+    function showWorkflowActionAlertWindow(config) {
+        config.contentSelector = '#divWorkflowActionAlert';
+        if ($('#divWorkflowActionAlert').length > 0) {
+            $('#divWorkflowActionAlert').find('#msg').html(config.msg);
+            $('#divWorkflowActionAlert').find('#formWorkflowAction').attr('action', config.url);
+            show(config);
+        }
+        else {
+            console.log('Missing WorkflowActionAlert Partial.  Please contact developer.');
+        }
+    }
+
+    var alert = function (cfg) {
+        var config = $.extend({}, cfg);
+        config.options = {
+            modal: true,
+            closeEffect: 'none',
+            helpers: {
+                overlay: {
+                    speedOut: 0
+                }
+            },
+            afterShow: function () {
+                overlayActivate($($(this)[0].element));
+                $('#divWorkflowActionAlert').find('#btnOK').focus();
+            }
+        };
+        showWorkflowActionAlertWindow(config);
+    };
+
+    var close = function () {
+        $.fancybox.close();
+    };
+
+    return {
+        close: close,
+        confirm: confirm,
+        alert: alert,
+        show: show
+    };
+
+}();
+

@@ -1,0 +1,106 @@
+﻿(function (window, document, $, ltss, htmlEncode, undefined) {
+    var printFormSelector = "#printForm",
+        printAreaSelector = "#printArea",
+        cliensummarySelector = "#cliensummaryinfo",
+        printableContentSelector = "#htmlText";
+
+    $(function () {
+        $(printFormSelector).submit(onSubmit);
+    });
+
+    function onSubmit() {
+
+        $.ajax({
+            url: ltss.PrintGlobalCssUrl,
+            type: 'GET',
+            processData: false,
+            async: false,
+            cache: true,
+            dataType: "text"
+        })
+            .done(function (content) {
+                prepareGlobalPrint(this, content);
+            })
+            .fail(function () {
+                var errorMessage = "Failed o load CSS";
+                console.log(errorMessage);
+                alert(errorMessage);
+            });
+    }
+
+    function prepareGlobalPrint(form, styleText) {
+        $(printAreaSelector).find('.workspace-content-container legend').each(function (idx, el) {
+            var legend = el;
+            var wrapClass = "wrap-for-print";
+            var wrapper = "<span></span>";
+            var isWrapped = $(legend).hasClass(wrapClass);
+            var exceedsCharLimit = $(legend).text().length > 100;
+
+            if (!isWrapped && exceedsCharLimit) {
+                    $(legend).addClass(wrapClass);
+                    $(legend).wrapInner(wrapper);
+            }
+        });
+        $(printAreaSelector).find(':input').each(function (idx, el) {
+            if ($(el).is('input[type=text]')) {
+                $(el).attr('value', $(el).val());
+            }
+            else if ($(el).is('textarea')) {
+                $(el).text($(el).val());
+            }
+            else if ($(el).is('select')) {
+                $(el).children(':selected').attr('selected', true);
+            }
+            else if ($(el).is('input[type=radio], input[type=checkbox]')) {
+                if ($(el).is(':checked')) {
+                    $(el).attr('checked', 'checked');
+                }
+
+                //*** Temporary Fix for ABCPDF IE10 Issue
+                if ($(el).is('input[type=radio]')) {
+                    var chkBox = $('<input type="checkbox" class="js-chkforprint"/>');
+                    if ($(el).is(':checked')) {
+                        chkBox.attr('checked', 'checked');
+                    }
+                    $(el).hide();
+                    $(el).after(chkBox);
+                }
+
+                //***
+            }
+        });
+
+        $('.dataTable[id]').each(function () {
+            $(form).data('prePrintColgroup', $(form).find('colgroup'));
+            var scrollHeadThead = $('#' + $(form).attr('id') + '_wrapper .dataTables_scrollHeadInner thead');
+            var removedThead = $(form).find('colgroup').replaceWith(scrollHeadThead);
+            $(form).data('prePrintThead', scrollHeadThead);
+        });
+
+        $('a:not("td.js-no-hide a"), input[type=button],input[type=submit], th.action, button, .read-edit-toggle, .new-form').addClass('hide-for-print');
+        $('img').addClass('hide-for-print');
+        $('a.hide-for-print').parents('td:not("td.js-no-hide")').addClass('hide-for-print');
+
+        if ($(cliensummarySelector).length == 0) {
+            $('.workspace').removeClass('p-valign-two').addClass('p-valign-top');
+        }
+
+        var htmlText = $(printAreaSelector).html();
+
+        var printHtml = htmlEncode('<style type="text/css">' + styleText + '</style>' + htmlText);
+
+        $(printableContentSelector).val(printHtml);
+
+        $('.dataTable[id]').each(function () {
+            $('#' + $(form).attr('id') + '_wrapper .dataTables_scrollHeadInner table').append($(form).data('prePrintThead'));
+            $(form).prepend($(form).data('prePrintColgroup'));
+        });
+
+        //*** Temporary Fix for ABCPDF IE10 Issue
+        $('.js-chkforprint').remove();
+        $('input[type=radio]').show();
+        //***
+
+        //form.submit();
+    }
+}(window, document, $, window["ltss"], window["htmlEncode"]));
