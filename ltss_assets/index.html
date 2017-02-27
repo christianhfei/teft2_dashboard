@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/jquery.multiselect.css">
     <link rel="stylesheet" type="text/css" href="./assets/jquery.dataTables.css">
-    
+
     <link rel="stylesheet" type="text/css" href="./assets/ltss.css">
     <link rel="stylesheet" type="text/css" href="./assets/ltss_legacy.css">
     <link rel="stylesheet" type="text/css" href="./assets/jquery.qtip.min.css">
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="./assets/jquery.jscrollpane.css">
     <link rel="stylesheet" type="text/css" href="./assets/font-awesome.min.css">
     <link rel="stylesheet" href="../css/main.css" type="text/css">
-    
+
 
     <script type="text/javascript" src="./assets/jquery-1.8.3.min.js.download"></script>
     <script type="text/javascript" src="./assets/dashboard.js.download"></script>
@@ -216,85 +216,7 @@
                                 </ul>
                             </nav>
                         </div>
-                        <div id="dialog-errorForm" style="display: none;" class="casenotes-main-container">
-                            <form id="errorReportForm">
-                                <fieldset class="fieldset-container-one">
-                                    <legend class="legend-header-one">User Feedback</legend>
-                                    <div class="row alpha omega">
-                                        <label for="errorReportDate">
-                    Date:
-                </label>
-                                        <input type="text" id="errorReportDate" class="readonly" readonly="readonly" data-bind="value:errorViewModel.Date">
-                                    </div>
-                                    <div class="row alpha omega">
-                                        <label for="errorReportName">
-                    Name:
-                </label>
-                                        <input type="text" id="errorReportName" class="readonly" readonly="readonly" data-bind="value:errorViewModel.Name">
-                                    </div>
-                                    <div class="row alpha omega">
-                                        <label for="errorReportAgency">
-                    Agency:
-                </label>
-                                        <input type="text" id="errorReportAgency" class="readonly" readonly="readonly" data-bind="value:errorViewModel.Agency">
-                                    </div>
-                                    <div class="row alpha omega">
-                                        <label for="errorReportLocation">
-                    Location:
-                </label>
-                                        <input type="text" id="errorReportLocation" class="readonly" readonly="readonly" data-bind="value:errorViewModel.Location">
-                                    </div>
-                                    <div class="row alpha omega">
-                                        <label for="errorReportUrl">
-                    Url:
-                </label>
-                                        <input type="text" id="errorReportUrl" class="readonly" readonly="readonly" data-bind="value:errorViewModel.ErrorUrl">
-                                    </div>
-                                    <div class="row alpha omega">
-                                        <label for="errorReportConcernType">
-                    Type of Concern:<span class="complete-required-indicator" title="This field is required to add.">*</span>
-                </label>
-                                        <select id="errorReportConcernType" name="errorReportConcernType" class="required" data-bind="value:errorViewModel.ConcernTypeId, options: errorViewModel.ConcernTypes, optionsText: &#39;Text&#39;, optionsValue: &#39;Value&#39;, optionsCaption: &#39; &#39;">
-                </select>
-                                        <span class="field-validation-valid" data-valmsg-replace="true" data-valmsg-for="errorReportConcernType" data-valmsg="Concern type is required."></span>
-                                    </div>
-                                    <div class="row alpha omega">
-                                        <label for="errorReportSeverityType">
-                    Severity:<span class="complete-required-indicator" title="This field is required to add.">*</span>
-                </label>
-                                        <select id="errorReportSeverityType" name="errorReportSeverityType" class="required" data-bind="value:errorViewModel.SeverityTypeId, options: errorViewModel.SeverityTypes, optionsText: &#39;Text&#39;, optionsValue: &#39;Value&#39;, optionsCaption: &#39; &#39;">
-                </select>
-                                        <span class="field-validation-valid" data-valmsg-replace="true" data-valmsg-for="errorReportSeverityType" data-valmsg="Severity type is required."></span>
-                                    </div>
-                                    <div class="row alpha omega">
-                                        <span class="label-info">To help us diagnose the cause of this issue and improve this
-                    software please provide as much information as possible. </span>
-                                        <label for="errorReportMessage">
-                    Details: <span class="complete-required-indicator" title="This field is required to add.">*</span>
-                </label>
-                                        <textarea id="errorReportMessage" name="errorReportMessage" class="required comments-textarea" data-bind="value:errorViewModel.ErrorMessage"></textarea>
-                                        <span class="field-validation-valid" data-valmsg-replace="true" data-valmsg-for="errorReportMessage" data-valmsg="Details is required."></span>
-                                    </div>
-                                    <div class="row alpha omega">
-                                        <label for="errorReportComments">
-                    Comments:
-                </label>
-                                        <textarea id="errorReportComments" name="errorReportComments" class="comments-textarea" data-bind="value:errorViewModel.Comment"></textarea>
-                                    </div>
-                                    <div class="float-right">
-                                        <input type="button" value="Close" data-bind="click:errorViewModel.close">
-                                        <input type="button" value="Send" data-bind="click: errorViewModel.save">
-                                    </div>
-                                </fieldset>
-                            </form>
-                        </div>
-                        <script src="./assets/knockout-2.1.0.js.download" type="text/javascript"></script>
-                        <script src="./assets/knockout.mapping-latest.js.download" type="text/javascript"></script>
-
-
-
-
-
+                        
                     </div>
                 </header>
 
@@ -350,249 +272,129 @@
                         </div>
                     </div>
                     <div class="dashboard-container ">
-                        
-                            <div class="clearfix"><br></div>
-                            <div class="row firstRow">
 
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 outerColumn">
-                                    <!-- Login Card -->
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">
-                                                <div class="row ">
-                                                    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 loginStats hidden-md">
-                                                        <div class="outerContainer">
-                                                            <div class="successfulLogins"><span>387070</span> Successful Logins</div>
-                                                            <div class="totalLogins"><span>483028</span> Total Logins</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 recentLogins">
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                                <h3 class="text-left">Recent Logins</h3>
-                                                                <span class="pull-right"><a href="#">View All</a></span>
+                        <div class="clearfix"><br></div>
+                        <div class="row firstRow">
 
-                                                            </div>
-                                                        </div>
-                                                        <div class="table-responsive">
-                                                            <table class="table table-condensed">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>Username</th>
-                                                                        <th>User Type</th>
-                                                                        <th>Success/Fail</th>
-                                                                        <th>Location</th>
-                                                                        <th>Time</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr class="">
-                                                                        <td>SallyDoe</td>
-                                                                        <td>Client</td>
-                                                                        <td><span class="glyphicon glyphicon-ok"></span> Success</td>
-                                                                        <td>Rockville, MD</td>
-                                                                        <td>8:43 PM</td>
-                                                                    </tr>
-                                                                    <tr class="">
-                                                                        <td>JohnDoe</td>
-                                                                        <td>Guardian</td>
-                                                                        <td><span class="glyphicon glyphicon-remove"></span>                                                                            Fail</td>
-                                                                        <td>Palo Alto, CA</td>
-                                                                        <td>2:43 AM</td>
-                                                                    </tr>
-                                                                    <tr class="">
-                                                                        <td>StevieWonder</td>
-                                                                        <td>Client</td>
-                                                                        <td><span class="glyphicon glyphicon-ok"></span> Success</td>
-                                                                        <td>Rockville, MD</td>
-                                                                        <td>8:43 PM</td>
-                                                                    </tr>
-                                                                    <tr class="">
-                                                                        <td>JamesJones</td>
-                                                                        <td>Client</td>
-                                                                        <td><span class="glyphicon glyphicon-remove"></span>                                                                            Fail</td>
-                                                                        <td>Rockville, MD</td>
-                                                                        <td>8:43 PM</td>
-                                                                    </tr>
-                                                                    <tr class="">
-                                                                        <td>AbeLincoln</td>
-                                                                        <td>Client</td>
-                                                                        <td><span class="glyphicon glyphicon-remove"></span>                                                                            Fail</td>
-                                                                        <td>Rockville, MD</td>
-                                                                        <td>8:43 PM</td>
-                                                                    </tr>
-                                                                    <tr class="">
-                                                                        <td>BillWithers</td>
-                                                                        <td>Client</td>
-                                                                        <td><span class="glyphicon glyphicon-remove"></span>                                                                            Fail</td>
-                                                                        <td>Rockville, MD</td>
-                                                                        <td>8:43 PM</td>
-                                                                    </tr>
-                                                                    <tr class="">
-                                                                        <td>AlfredHitch</td>
-                                                                        <td>Client</td>
-                                                                        <td><span class="glyphicon glyphicon-ok"></span> Success</td>
-                                                                        <td>Rockville, MD</td>
-                                                                        <td>8:43 PM</td>
-                                                                    </tr>
-                                                                    <tr class="">
-                                                                        <td>BillyMays</td>
-                                                                        <td>Client</td>
-                                                                        <td><span class="glyphicon glyphicon-ok"></span> Success</td>
-                                                                        <td>Rockville, MD</td>
-                                                                        <td>8:43 PM</td>
-                                                                    </tr>
-                                                                    <tr class="">
-                                                                        <td>TimCooper</td>
-                                                                        <td>Client</td>
-                                                                        <td><span class="glyphicon glyphicon-ok"></span> Success</td>
-                                                                        <td>Rockville, MD</td>
-                                                                        <td>8:43 PM</td>
-                                                                    </tr>
-                                                                    <tr class="">
-                                                                        <td>SallyDoe</td>
-                                                                        <td>Client</td>
-                                                                        <td><span class="glyphicon glyphicon-ok"></span> Success</td>
-                                                                        <td>Rockville, MD</td>
-                                                                        <td>8:43 PM</td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                        <div class="text-center"><small>Showing 10 most recent</small></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /end Login Card -->
-                                    <div class="col-md-12 loginStats visible-md">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">
-                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 loginStats">
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 outerColumn">
+                                <!-- Login Card -->
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row ">
+                                                <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 loginStats hidden-md">
                                                     <div class="outerContainer">
                                                         <div class="successfulLogins"><span>387070</span> Successful Logins</div>
                                                         <div class="totalLogins"><span>483028</span> Total Logins</div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 recentLogins">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                            <h3 class="text-left">Recent Logins</h3>
+                                                            <span class="pull-right"><a href="#">View All</a></span>
 
-                                </div>
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 outerColumn">
-
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 recentSearches">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">
-                                                <div class="row">
-                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                        <h3>Recent Searches</h3>
-                                                        <span class="pull-right"><a href="#">View All</a></span>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                        <div class="table-responsive">
-                                                            <table class="table table-condensed">
-                                                                <thead>
-                                                                    <th>Username</th>
-                                                                    <th>Searched For</th>
-                                                                    <th>Searched By</th>
-                                                                    <th>Action</th>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>SallyDoe</td>
-                                                                        <td>Date</td>
-                                                                        <td>Week</td>
-                                                                        <td><a href="#">View</a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>ChristianHeyd</td>
-                                                                        <td>Provider</td>
-                                                                        <td>Day</td>
-                                                                        <td><a href="#">View</a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>CicioSmith</td>
-                                                                        <td>Date</td>
-                                                                        <td>Day</td>
-                                                                        <td><a href="#">View</a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>JohnLennon</td>
-                                                                        <td>Provider</td>
-                                                                        <td>Week</td>
-                                                                        <td><a href="#">View</a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>JohnBonham</td>
-                                                                        <td>Date</td>
-                                                                        <td>Day</td>
-                                                                        <td><a href="#">View</a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>JamesPage</td>
-                                                                        <td>Date</td>
-                                                                        <td>Week</td>
-                                                                        <td><a href="#">View</a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>MarcOkubo</td>
-                                                                        <td>Provider</td>
-                                                                        <td>Day</td>
-                                                                        <td><a href="#">View</a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>ChuckSchuldiner</td>
-                                                                        <td>Service</td>
-                                                                        <td>Week</td>
-                                                                        <td><a href="#">View</a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>SallyDoe</td>
-                                                                        <td>Date</td>
-                                                                        <td>Week</td>
-                                                                        <td><a href="#">View</a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>MaggieWilliams</td>
-                                                                        <td>Provider</td>
-                                                                        <td>Day</td>
-                                                                        <td><a href="#">View</a></td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
                                                         </div>
-                                                        <div class="text-center"><small>Showing 10 most recent</small></div>
                                                     </div>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-condensed">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Username</th>
+                                                                    <th>User Type</th>
+                                                                    <th>Success/Fail</th>
+                                                                    <th>Location</th>
+                                                                    <th>Time</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr class="">
+                                                                    <td>SallyDoe</td>
+                                                                    <td>Client</td>
+                                                                    <td><span class="glyphicon glyphicon-ok"></span> Success</td>
+                                                                    <td>Rockville, MD</td>
+                                                                    <td>8:43 PM</td>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>JohnDoe</td>
+                                                                    <td>Guardian</td>
+                                                                    <td><span class="glyphicon glyphicon-remove"></span> Fail</td>
+                                                                    <td>Palo Alto, CA</td>
+                                                                    <td>2:43 AM</td>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>StevieWonder</td>
+                                                                    <td>Client</td>
+                                                                    <td><span class="glyphicon glyphicon-ok"></span> Success</td>
+                                                                    <td>Rockville, MD</td>
+                                                                    <td>8:43 PM</td>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>JamesJones</td>
+                                                                    <td>Client</td>
+                                                                    <td><span class="glyphicon glyphicon-remove"></span> Fail</td>
+                                                                    <td>Rockville, MD</td>
+                                                                    <td>8:43 PM</td>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>AbeLincoln</td>
+                                                                    <td>Client</td>
+                                                                    <td><span class="glyphicon glyphicon-remove"></span> Fail</td>
+                                                                    <td>Rockville, MD</td>
+                                                                    <td>8:43 PM</td>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>BillWithers</td>
+                                                                    <td>Client</td>
+                                                                    <td><span class="glyphicon glyphicon-remove"></span> Fail</td>
+                                                                    <td>Rockville, MD</td>
+                                                                    <td>8:43 PM</td>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>AlfredHitch</td>
+                                                                    <td>Client</td>
+                                                                    <td><span class="glyphicon glyphicon-ok"></span> Success</td>
+                                                                    <td>Rockville, MD</td>
+                                                                    <td>8:43 PM</td>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>BillyMays</td>
+                                                                    <td>Client</td>
+                                                                    <td><span class="glyphicon glyphicon-ok"></span> Success</td>
+                                                                    <td>Rockville, MD</td>
+                                                                    <td>8:43 PM</td>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>TimCooper</td>
+                                                                    <td>Client</td>
+                                                                    <td><span class="glyphicon glyphicon-ok"></span> Success</td>
+                                                                    <td>Rockville, MD</td>
+                                                                    <td>8:43 PM</td>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>SallyDoe</td>
+                                                                    <td>Client</td>
+                                                                    <td><span class="glyphicon glyphicon-ok"></span> Success</td>
+                                                                    <td>Rockville, MD</td>
+                                                                    <td>8:43 PM</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="text-center"><small>Showing 10 most recent</small></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- /end recent searches table-->
-                                    <!-- days to resolve -->
-                                    <div class="col-xs-12 col-sm-6 col-md-6 hidden-lg daysToResolve">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">
-                                                <div class="row">
-                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                        <span><span>4</span> days to resolve flags on average.</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /end days to resolve -->
-
-                                    <div class="col-xs-12 col-sm-6 col-md-6 hidden-lg timeBetweenFlags">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">
-                                                <div class="row">
-                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                        <span><span>6</span> days between flags on average.</span>
-                                                    </div>
+                                </div>
+                                <!-- /end Login Card -->
+                                <div class="col-md-12 loginStats visible-md">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 loginStats">
+                                                <div class="outerContainer">
+                                                    <div class="successfulLogins"><span>387070</span> Successful Logins</div>
+                                                    <div class="totalLogins"><span>483028</span> Total Logins</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -600,74 +402,194 @@
                                 </div>
 
                             </div>
-                            <!-- /end first row -->
-                            <div class="row secondRow">
-                                <div class="col-lg-6 visible-lg outerColumn">
-                                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-12 daysToResolve">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">
-                                                <div class="row">
-                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                        <span><span>4</span> days to resolve flags on average.</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /end days to resolve -->
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 outerColumn">
 
-                                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-12 timeBetweenFlags">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">
-                                                <div class="row">
-                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                        <span><span>6</span> days between flags on average.</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 timeAtEachStatus">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 recentSearches">
                                     <div class="panel panel-default">
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                    <h3>Average Time Spent in Each Status</h3>
+                                                    <h3>Recent Searches</h3>
+                                                    <span class="pull-right"><a href="#">View All</a></span>
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 canvasContainer">
-                                                    <canvas id="timeAtEachStatus"></canvas>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-condensed">
+                                                            <thead>
+                                                                <th>Username</th>
+                                                                <th>Searched For</th>
+                                                                <th>Searched By</th>
+                                                                <th>Action</th>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>SallyDoe</td>
+                                                                    <td>Date</td>
+                                                                    <td>Week</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>ChristianHeyd</td>
+                                                                    <td>Provider</td>
+                                                                    <td>Day</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>CicioSmith</td>
+                                                                    <td>Date</td>
+                                                                    <td>Day</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>JohnLennon</td>
+                                                                    <td>Provider</td>
+                                                                    <td>Week</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>JohnBonham</td>
+                                                                    <td>Date</td>
+                                                                    <td>Day</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>JamesPage</td>
+                                                                    <td>Date</td>
+                                                                    <td>Week</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>MarcOkubo</td>
+                                                                    <td>Provider</td>
+                                                                    <td>Day</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>ChuckSchuldiner</td>
+                                                                    <td>Service</td>
+                                                                    <td>Week</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>SallyDoe</td>
+                                                                    <td>Date</td>
+                                                                    <td>Week</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>MaggieWilliams</td>
+                                                                    <td>Provider</td>
+                                                                    <td>Day</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="text-center"><small>Showing 10 most recent</small></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Frequency of Flags Chart -->
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                                <!-- /end recent searches table-->
+                                <!-- days to resolve -->
+                                <div class="col-xs-12 col-sm-6 col-md-6 hidden-lg daysToResolve">
                                     <div class="panel panel-default">
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                    <h3>Frequency of Flags</h3>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="canvasContainer col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                    <canvas id="frequencyOfFlagsChart" height="" width=""></canvas>
+                                                    <span><span>4</span> days to resolve flags on average.</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- /end Frequency of Flags Chart -->
+                                <!-- /end days to resolve -->
 
-
+                                <div class="col-xs-12 col-sm-6 col-md-6 hidden-lg timeBetweenFlags">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <span><span>6</span> days between flags on average.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        
+
+                        </div>
+                        <!-- /end first row -->
+                        <div class="row secondRow">
+                            <div class="col-lg-6 visible-lg outerColumn">
+                                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-12 daysToResolve">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <span><span>4</span> days to resolve flags on average.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /end days to resolve -->
+
+                                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-12 timeBetweenFlags">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <span><span>6</span> days between flags on average.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 timeAtEachStatus">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <h3>Average Time Spent in Each Status</h3>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 canvasContainer">
+                                                <canvas id="timeAtEachStatus"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Frequency of Flags Chart -->
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <h3>Frequency of Flags</h3>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="canvasContainer col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <canvas id="frequencyOfFlagsChart" height="" width=""></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /end Frequency of Flags Chart -->
+
+
+                        </div>
+
 
 
                     </div>
@@ -685,37 +607,12 @@
     </div>
 
 
-    </div>
-    </div>
 
-
-
-    </div>
-
-    </div>
-    </div>
-    </div>
-
-
-
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-
-
-    </div>
-
-
-    </div>
 
 
     <!--Footer Area -->
 
-    </div>
-    </div>
-    </div>
+
     <script src="../node_modules\chart.js\dist\Chart.bundle.js"></script>
     <script src="../js/main.js"></script>
 </body>
