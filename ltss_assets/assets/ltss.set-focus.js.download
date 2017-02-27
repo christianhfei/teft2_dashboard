@@ -1,0 +1,152 @@
+﻿//Script allows you to target an element and set focus on the first :input. This can be triggered by either a "click" event or by explicitly calling the "Method" directly - [LN] 11/4/2015
+
+
+ltss.setFocus = function () {
+
+    var origin = originCache();
+
+    //Method usage: 
+
+    //  <div data-target-set-focus="myTargetElement"></div>
+    //  <script> ltss.setFocus.onElement("myTargetElement"); </script>
+
+
+    var onOrigin = function () {
+        var targetName = origin.get("originName");
+        var targetElement = $('[data-target-set-focus-origin=' + targetName + ']');
+
+
+        if (targetElement[0] != null) {
+            setTimeout(function () {
+                $(targetElement).focus();
+                $(targetElement).removeAttr('data-target-set-focus-origin');
+                origin.remove("originName");
+            },0)
+        } else {
+            findAndSetFocus('[data-target-set-focus]', 'first');
+        }
+    }
+
+    var onElement = function (targetName) {
+        var target = "[data-target-set-focus=" + targetName + "]";
+        findAndSetFocus(target);
+    }
+
+    function findAndSetFocus(target, firstOrLast) {
+        if ($(target).first().is(":input, a, button")) {
+            $(target).focus();
+        } else {
+            if (firstOrLast == "first") {
+                $(target).first().find(":input").first().focus();
+            } else {
+                $(target).last().find(":input").first().focus();
+            }
+        }
+    }
+
+    function originCache() {
+
+        // Create an object without a prototype so that we don't run into any cache-key
+        // conflicts with native Object.prototype properties.
+        var cache = Object.create(null);
+
+
+        return ({
+            get: get,
+            set: set,
+            remove: remove
+        });
+
+
+        function get(key) {
+
+            return (cache[key]);
+
+        }
+
+        function set(key, value) {
+
+            cache[key] = value;
+
+            return (this);
+
+        }
+        function remove(key) {
+
+            delete (cache[key]);
+
+            return (this);
+
+        }
+    }
+    var isAjaxInProcess = false;
+
+
+    function getIsAjaxInProcess(key) {
+
+        return isAjaxInProcess;
+
+    }
+
+    function setIsAjaxInProcess(key) {
+
+        isAjaxInProcess = key;
+
+    }
+
+    var isKendoWindowClosing = false;
+
+
+    function getIsKendoWindowClosing(key) {
+
+        return isKendoWindowClosing;
+
+    }
+
+    function setIsKendoWindowClosing(key) {
+
+        isKendoWindowClosing = key;
+
+    }
+    //Note: The function below will automatically bind elements on page load. Script is being called in the 'additionalScripts' file.
+    // usage:
+
+    //  <div data-target-set-focus="myTargetElement"></div>
+    //  <a  data-trigger-set-focus="myTargetElement">My Link or Button</a>
+    var initialize = function () {
+        $("[data-trigger-set-focus]").each(function () {
+            var trigger = this,
+            targetName = $(this).data("trigger-set-focus"),
+            target = "[data-target-set-focus=" + targetName + "]";
+
+            $(trigger).live("click", function () {
+                setTimeout(function () {
+                    findAndSetFocus(target);
+                }, 250)
+            });
+        });
+
+
+        $("[data-target-set-focus]").live("click", function () {
+            var target = this,
+             targetName = $(target).data("target-set-focus");
+
+            if ($(target).is('a, button, input[type=button]')) {
+                $('[data-target-set-focus-origin]').removeAttr('data-target-set-focus-origin');
+
+                origin.set("originName", targetName);
+                $(target).attr('data-target-set-focus-origin', targetName)
+            }
+        });
+    }
+
+    return {
+        onElement: onElement,
+        onOrigin: onOrigin,
+        initialize: initialize,
+        getIsAjaxInProcess: getIsAjaxInProcess,
+        setIsAjaxInProcess: setIsAjaxInProcess,
+        getIsKendoWindowClosing: getIsKendoWindowClosing,
+        setIsKendoWindowClosing: setIsKendoWindowClosing
+    };
+}();

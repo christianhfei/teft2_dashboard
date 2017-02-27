@@ -51,7 +51,7 @@ $(document).ready(function () {
             }
         },
         data: {
-            labels: ["Flagged (days)", "Under Review (days)", "Reviewed - No further action required", "Reviewed - Escalated to Incident"],
+            labels: ["Flagged (days)", ["Under", "Review", "(days)"], ["Reviewed -", "No further", "action required", "(days)"], ["Reviewed -", "Escalated", "to Incident", "(days)"]],
             datasets: [
                 {
                     backgroundColor: [

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Dashboard/Index/ -->
+<html id="html" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Administrator Dashboard - LTSS</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=100">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="./assets/kendo.dataviz.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/jquery.multiselect.css">
+    <link rel="stylesheet" type="text/css" href="./assets/jquery.dataTables.css">
+
+    <link rel="stylesheet" type="text/css" href="./assets/ltss.css">
+    <link rel="stylesheet" type="text/css" href="./assets/ltss_legacy.css">
+    <link rel="stylesheet" type="text/css" href="./assets/jquery.qtip.min.css">
+
+    <link rel="stylesheet" type="text/css" href="./assets/font-awesome-ie7.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/ie10.css">
+    <link rel="stylesheet" type="text/css" href="./assets/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/ltss_loader.css">
+    <link rel="stylesheet" type="text/css" href="./assets/HrdPage.css">
+    <link rel="stylesheet" type="text/css" href="./assets/Grid.css">
+    <link rel="stylesheet" type="text/css" href="./assets/MediaQuery.css">
+    <link rel="stylesheet" type="text/css" href="./assets/jquery-ui-1.10.2.custom.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/kendo.common.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/kendo.default.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/jquery.fancybox.css">
+    <link rel="stylesheet" type="text/css" href="./assets/jquery.jscrollpane.css">
+    <link rel="stylesheet" type="text/css" href="./assets/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/main.css" type="text/css">
+
+
+    <script type="text/javascript" src="./assets/jquery-1.8.3.min.js.download"></script>
+    <script type="text/javascript" src="./assets/dashboard.js.download"></script>
+    <script type="text/javascript" src="./assets/kendo.dataviz.min.js.download"></script>
+    <script type="text/javascript" src="./assets/kendo.web.min.js.download"></script>
+    <script type="text/javascript" src="./assets/bootstrap.js.download"></script>
+    <script type="text/javascript" src="./assets/datastore.js.download"></script>
+    <script type="text/javascript" src="./assets/jquery-textFill-0.1.js.download"></script>
+    <script type="text/javascript" src="./assets/jquery.dataTables.rowGrouping.js.download"></script>
+    <script type="text/javascript" src="./assets/jquery.dataTables.min.js.download"></script>
+    <script type="text/javascript" src="./assets/ltss.js.download"></script>
+    <script type="text/javascript" src="./assets/ltss.kendo.extensions.js.download"></script>
+    <script type="text/javascript" src="./assets/jquery.fancybox.js.download"></script>
+    <script type="text/javascript" src="./assets/ltss.overlay.js.download"></script>
+    <script type="text/javascript" src="./assets/ltss.panelBar.js.download"></script>
+    <script type="text/javascript" src="./assets/jquery.cycle.all.js.download"></script>
+    <script type="text/javascript" src="./assets/jquery.dotdotdot-1.7.2.js.download"></script>
+    <script type="text/javascript" src="./assets/jquery-ui-1.9.2.dashboard.min.js.download"></script>
+    <script type="text/javascript" src="./assets/jquery.multiselect.min.js.download"></script>
+    <script type="text/javascript" src="./assets/jquery.jscrollpane.js.download"></script>
+    <script type="text/javascript" src="./assets/jquery.mousewheel.js.download"></script>
+    <script type="text/javascript" src="./assets/jquery.mwheelIntent.js.download"></script>
+    <script type="text/javascript" src="./assets/menu.js.download"></script>
+    <script type="text/javascript" src="./assets/dashboard-common.js.download"></script>
+    <script type="text/javascript" src="./assets/jquery.qtip.min.js.download"></script>
+    <script type="text/javascript" src="./assets/ltss.set-focus.js.download"></script>
+
+
+    <!-- Favicons
+	<link rel="shortcut icon" href="">
+	<link rel="apple-touch-icon" href="">
+	<link rel="apple-touch-icon" sizes="72x72" href="">
+	<link rel="apple-touch-icon" sizes="114x114" href=""> -->
+
+</head>
+
+<body id="body">
+    <div id="main-layout" role="application" class="container-fluid">
+        <div id="layoutWrapper" role="presentation">
+            <div id="printArea">
+                <!-- Global Header -->
+                <header id="mainHeader-MenuBar" role="menubar">
+                    <div class="header" role="presentation">
+
+                        <div id="LtssMarylandHeaderInfo" class="three columns logo" role="presentation">
+                            <a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Dashboard/Index/#Main_Application_Menu" class="ui-hide">Skip to Main Application Menu</a>
+                            <h1><i>LTSSMaryland</i></h1>
+                        </div>
+                        <div id="userinfo" class="six columns">
+
+                        </div>
+                        <div id="ltss-mainmenu-container" class="three columns alpha omega hide-for-print" role="presentation">
+                            <nav id="Main_Application_Menu" tabindex="0">
+                                <a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Dashboard/Index/#mainTabbedNav" class="ui-hide">Skip to Top Level Navigation</a>
+                                <ul role="menubar" id="ltss-mainmenu" tabindex="0">
+                                    <li role="menuitem" aria-haspopup="true"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Dashboard/Index/#Application_Menu"
+                                            onclick="return false" class="subMenuHeader">
+                                    Menu</a>
+                                        <ul role="menu" data-test="true" aria-hidden="true">
+                                            <li role="menuitem" aria-haspopup="true"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Dashboard/Index/#"
+                                                    onclick="return false" class="subMenuHeader" tabindex="-1">Main<span aria-hidden="true"> &gt;</span></a>
+                                                <ul data-test="true" aria-hidden="true" role="menu">
+                                                    <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Home/Index/"
+                                                            tabindex="-1">Home</a></li>
+                                                    <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/CasePrograms/CaseProgram/ClientSearch/"
+                                                            tabindex="-1">Clients</a></li>
+                                                    <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/CasePrograms/CaseProgram/MyList/"
+                                                            tabindex="-1">My Lists</a></li>
+                                                    <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/CasePrograms/CaseProgram/Alerts/"
+                                                            tabindex="-1">Alerts</a></li>
+                                                    <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Dashboard/Index/"
+                                                            tabindex="-1">Dashboard</a></li>
+                                                    <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Assignments/Assignment/Assignments/"
+                                                            tabindex="-1">Assignments</a></li>
+                                                    <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Tools/Report/Index/"
+                                                            tabindex="-1">Reports</a></li>
+                                                </ul>
+                                            </li>
+                                            <li role="menuitem" aria-haspopup="true"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Dashboard/Index/#"
+                                                    onclick="return false" class="subMenuHeader" tabindex="-1">Administration<span aria-hidden="true"> &gt;</span></a>
+                                                <ul role="menu" data-test="true" aria-hidden="true">
+                                                    <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Admin/Agency/List/"
+                                                            tabindex="-1">Providers</a></li>
+                                                    <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Admin/Staff/List/"
+                                                            tabindex="-1">Staff</a></li>
+                                                    <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Admin/PeerProfile/List/"
+                                                            tabindex="-1">Peers</a></li>
+                                                    <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Admin/MyLocation/ListStaff/"
+                                                            tabindex="-1">My Locations/Staff</a></li>
+                                                    <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Admin/MyProfile/Details/staffs/BB7A69EF-6766-E211-8859-00155D0A3228"
+                                                            tabindex="-1">My Profile</a></li>
+                                                    <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Admin/UserDirectory/List/"
+                                                            tabindex="-1">User Directory</a></li>
+                                                    <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Tools/DocumentLibrary/DocumentLibraryAttachmentList/"
+                                                            tabindex="-1">Document Library</a></li>
+
+
+
+                                                    <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Admin/AgencyLevelAcl/ManageAcl/"
+                                                            tabindex="-1">Case Note ACL</a></li>
+                                                    <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/AppResource/List/"
+                                                            tabindex="-1">Dynamic Resource</a></li>
+                                                    <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Admin/MapPartnerManage/List/"
+                                                            tabindex="-1">MAP Partner Management</a></li>
+
+
+
+
+                                                </ul>
+                                            </li>
+                                            <li role="menuitem" aria-haspopup="true" style="display: none;"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Dashboard/Index/#"
+                                                    onclick="return false;" class="subMenuHeader" tabindex="-1">Audit Trail <span aria-hidden="true"> &gt;</span></a>
+                                                <ul role="menu" data-test="true" aria-hidden="true">
+
+
+
+                                                </ul>
+                                            </li>
+                                            <li role="menuitem" aria-haspopup="true" style="display: none;"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Dashboard/Index/#"
+                                                    onclick="return false" class="subMenuHeader" tabindex="-1">QCR<span aria-hidden="true"> &gt;</span></a>
+                                                <ul role="menu" data-test="true" aria-hidden="true">
+
+
+
+                                                </ul>
+                                            </li>
+
+                                            <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Home/Contact/"
+                                                    tabindex="-1">Technical Support</a></li>
+
+                                            <li role="menuitem" aria-haspopup="true"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Dashboard/Index/#"
+                                                    onclick="return false" class="subMenuHeader" tabindex="-1">Offline Mode<span aria-hidden="true"> &gt;</span></a>
+                                                <ul role="menu" data-test="true" aria-hidden="true">
+
+                                                    <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/NurseMonitoring/NurseMonitoring/OfflineNurseMonitoringList/"
+                                                            id="refereshOfflineLink" onclick="callNurseMonitoringRefreshOffline(&#39;/ltss/WebSites/MDHotFixDEV/Ltss.Web/NurseMonitoring/NurseMonitoring/OfflineNurseMonitoringList/&#39;);return false;"
+                                                            role="tooltip" title="Go to Offline Nurse Monitoring" tabindex="-1">Nurse Monitoring</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li role="menuitem" aria-haspopup="true"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Dashboard/Index/#"
+                                                    onclick=" return false " class="subMenuHeader" tabindex="-1">Feedback<span aria-hidden="true"> &gt;</span></a>
+                                                <ul role="menu" data-test="true" aria-hidden="true">
+                                                    <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/ErrorReport/List/"
+                                                            tabindex="-1">List</a></li>
+                                                    <li role="menuitem"><a class="lnkFeedback" haspopup="true" href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/ErrorReport/Create/"
+                                                            tabindex="-1">Create</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li role="menuitem"><a class="lnkSelectProgramTypes" haspopup="true" href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Account/SelectProgramTypes/"
+                                                    onclick="return false;" tabindex="-1">Select Program Types</a></li>
+                                            <li role="menuitem">
+                                                <form action="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Dashboard/_Print/" class="noBlockUi" id="printForm"
+                                                    method="post" target="_blank"> <input type="hidden" id="htmlText" name="htmlText" value="">
+                                                    <input type="submit" id="btnPrint" value="Print">
+                                                </form>
+                                                <script type="text/javascript">
+                                                    var ltss = ltss || {};
+                                                    ltss.PrintGlobalCssUrl =
+                                                        "/ltss/WebSites/MDHotFixDEV/Ltss.Web/Content/ltss.print.global.css";
+                                                </script>
+                                                <script src="./assets/printPartial.js.download" type="text/javascript"></script>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li role="menuitem" aria-haspopup="true"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Dashboard/Index/#Account_Menu"
+                                            onclick="return false" class="subMenuHeader">
+                                        Account</a>
+                                        <ul role="menu" data-test="true" aria-hidden="true">
+                                            <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Isas/Start/Index/"
+                                                    tabindex="-1">Go To ISAS</a></li>
+                                            <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Account/Authorize/"
+                                                    tabindex="-1">Authorize</a></li>
+                                            <li role="menuitem"><a href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Acs/SignOut/"
+                                                    tabindex="-1">Sign Out</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        
+                    </div>
+                </header>
+
+                <!-- Main Body -->
+                <div id="body-content" role="presentation">
+                    <!-- Main Content Area -->
+
+                    <!-- Top level navigation -->
+                    <div id="mainTabbedNav">
+                        <nav class="tabbed-nav">
+                            <ul>
+                                <li>
+                                    <a class="ltss-icon-left  home-icon" href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Home/Index/" style="cursor: default;"><span class="ltss-icon-container icon-left"></span>Home</a>
+                                </li>
+                                <li>
+                                    <a class="ltss-icon-left client-match-icon" href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/CasePrograms/CaseProgram/ClientSearch/"
+                                        style="cursor: default;"><span class="ltss-icon-container icon-left"></span>Clients</a>
+                                </li>
+                                <li>
+                                    <a class="ltss-icon-left  list-icon" href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/CasePrograms/CaseProgram/MyList/"
+                                        style="cursor: default;"><span class="ltss-icon-container icon-left"></span>My Lists</a>
+                                </li>
+                                <li>
+                                    <a class="ltss-icon-left  alerts-icon" href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/CasePrograms/CaseProgram/Alerts/"
+                                        style="cursor: default;"><span class="ltss-icon-container icon-left"></span>Alerts</a>
+                                </li>
+                                <li class="selected">
+                                    <a class="selected ltss-icon-left  dashboard-icon" href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Dashboard/Index/"
+                                        onclick="return false;" style="cursor: default;"><span class="ltss-icon-container icon-left"></span>Dashboard<span class="offset-hidden js-selected-menu-item">selected</span></a>
+                                </li>
+                                <li>
+                                    <a class="ltss-icon-left  client-match-icon" href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Assignments/Assignment/Assignments/"
+                                        style="cursor: default;"><span class="ltss-icon-container icon-left"></span>Assignments</a>
+                                </li>
+                                <li>
+                                    <a class="ltss-icon-left  reports-icon" href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/Tools/Report/Index/"
+                                        style="cursor: default;"><span class="ltss-icon-container icon-left"></span>Reports</a>
+                                </li>
+                                <li>
+                                    <a class="ltss-icon-left list-icon" href="http://ltssdevsvr005/ltss/WebSites/MDHotFixDEV/Ltss.Web/WaiverRegistry/ClientRegistry/List/"
+                                        style="cursor: default;"><span class="ltss-icon-container icon-left"></span>Waiver Registry</a>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+
+
+                    <div class="selection-summaryinfo" role="menubar">
+                        <div>
+                            <h3 id="dashboardTitle">
+                                MyLTSS Dashboard</h3>
+                        </div>
+                    </div>
+                    <div class="dashboard-container ">
+
+                        <div class="clearfix"><br></div>
+                        <div class="row firstRow">
+
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 outerColumn">
+                                <!-- Login Card -->
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row ">
+                                                <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 loginStats hidden-md">
+                                                    <div class="outerContainer">
+                                                        <div class="successfulLogins"><span>387070</span> Successful Logins</div>
+                                                        <div class="totalLogins"><span>483028</span> Total Logins</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 recentLogins">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                            <h3 class="text-left">Recent Logins</h3>
+                                                            <span class="pull-right"><a href="#">View All</a></span>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-condensed">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Username</th>
+                                                                    <th>User Type</th>
+                                                                    <th>Success/Fail</th>
+                                                                    <th>Location</th>
+                                                                    <th>Time</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr class="">
+                                                                    <td>SallyDoe</td>
+                                                                    <td>Client</td>
+                                                                    <td><span class="glyphicon glyphicon-ok"></span> Success</td>
+                                                                    <td>Rockville, MD</td>
+                                                                    <td>8:43 PM</td>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>JohnDoe</td>
+                                                                    <td>Guardian</td>
+                                                                    <td><span class="glyphicon glyphicon-remove"></span> Fail</td>
+                                                                    <td>Palo Alto, CA</td>
+                                                                    <td>2:43 AM</td>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>StevieWonder</td>
+                                                                    <td>Client</td>
+                                                                    <td><span class="glyphicon glyphicon-ok"></span> Success</td>
+                                                                    <td>Rockville, MD</td>
+                                                                    <td>8:43 PM</td>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>JamesJones</td>
+                                                                    <td>Client</td>
+                                                                    <td><span class="glyphicon glyphicon-remove"></span> Fail</td>
+                                                                    <td>Rockville, MD</td>
+                                                                    <td>8:43 PM</td>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>AbeLincoln</td>
+                                                                    <td>Client</td>
+                                                                    <td><span class="glyphicon glyphicon-remove"></span> Fail</td>
+                                                                    <td>Rockville, MD</td>
+                                                                    <td>8:43 PM</td>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>BillWithers</td>
+                                                                    <td>Client</td>
+                                                                    <td><span class="glyphicon glyphicon-remove"></span> Fail</td>
+                                                                    <td>Rockville, MD</td>
+                                                                    <td>8:43 PM</td>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>AlfredHitch</td>
+                                                                    <td>Client</td>
+                                                                    <td><span class="glyphicon glyphicon-ok"></span> Success</td>
+                                                                    <td>Rockville, MD</td>
+                                                                    <td>8:43 PM</td>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>BillyMays</td>
+                                                                    <td>Client</td>
+                                                                    <td><span class="glyphicon glyphicon-ok"></span> Success</td>
+                                                                    <td>Rockville, MD</td>
+                                                                    <td>8:43 PM</td>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>TimCooper</td>
+                                                                    <td>Client</td>
+                                                                    <td><span class="glyphicon glyphicon-ok"></span> Success</td>
+                                                                    <td>Rockville, MD</td>
+                                                                    <td>8:43 PM</td>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>SallyDoe</td>
+                                                                    <td>Client</td>
+                                                                    <td><span class="glyphicon glyphicon-ok"></span> Success</td>
+                                                                    <td>Rockville, MD</td>
+                                                                    <td>8:43 PM</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="text-center"><small>Showing 10 most recent</small></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /end Login Card -->
+                                <div class="col-md-12 loginStats visible-md">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 loginStats">
+                                                <div class="outerContainer">
+                                                    <div class="successfulLogins"><span>387070</span> Successful Logins</div>
+                                                    <div class="totalLogins"><span>483028</span> Total Logins</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 outerColumn">
+
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 recentSearches">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <h3>Recent Searches</h3>
+                                                    <span class="pull-right"><a href="#">View All</a></span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-condensed">
+                                                            <thead>
+                                                                <th>Username</th>
+                                                                <th>Searched For</th>
+                                                                <th>Searched By</th>
+                                                                <th>Action</th>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>SallyDoe</td>
+                                                                    <td>Date</td>
+                                                                    <td>Week</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>ChristianHeyd</td>
+                                                                    <td>Provider</td>
+                                                                    <td>Day</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>CicioSmith</td>
+                                                                    <td>Date</td>
+                                                                    <td>Day</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>JohnLennon</td>
+                                                                    <td>Provider</td>
+                                                                    <td>Week</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>JohnBonham</td>
+                                                                    <td>Date</td>
+                                                                    <td>Day</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>JamesPage</td>
+                                                                    <td>Date</td>
+                                                                    <td>Week</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>MarcOkubo</td>
+                                                                    <td>Provider</td>
+                                                                    <td>Day</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>ChuckSchuldiner</td>
+                                                                    <td>Service</td>
+                                                                    <td>Week</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>SallyDoe</td>
+                                                                    <td>Date</td>
+                                                                    <td>Week</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>MaggieWilliams</td>
+                                                                    <td>Provider</td>
+                                                                    <td>Day</td>
+                                                                    <td><a href="#">View</a></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="text-center"><small>Showing 10 most recent</small></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /end recent searches table-->
+                                <!-- days to resolve -->
+                                <div class="col-xs-12 col-sm-6 col-md-6 hidden-lg daysToResolve">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <span><span>4</span> days to resolve flags on average.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /end days to resolve -->
+
+                                <div class="col-xs-12 col-sm-6 col-md-6 hidden-lg timeBetweenFlags">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <span><span>6</span> days between flags on average.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /end first row -->
+                        <div class="row secondRow">
+                            <div class="col-lg-6 visible-lg outerColumn">
+                                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-12 daysToResolve">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <span><span>4</span> days to resolve flags on average.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /end days to resolve -->
+
+                                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-12 timeBetweenFlags">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                    <span><span>6</span> days between flags on average.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 timeAtEachStatus">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <h3>Average Time Spent in Each Status</h3>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 canvasContainer">
+                                                <canvas id="timeAtEachStatus"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Frequency of Flags Chart -->
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <h3>Frequency of Flags</h3>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="canvasContainer col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <canvas id="frequencyOfFlagsChart" height="" width=""></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /end Frequency of Flags Chart -->
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--Footer Area -->
+
+
+    <script src="../node_modules\chart.js\dist\Chart.bundle.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
