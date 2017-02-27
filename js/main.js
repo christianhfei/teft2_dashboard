@@ -4,7 +4,7 @@ $(document).ready(function () {
         var chartElement = document.getElementById(chart),
             chartPanel = chartElement.parentNode.parentNode.parentNode,
             chartSize = chartPanel.clientHeight + "px";
-        console.log(chartSize);
+        console.log(chartSize); 
         chartElement.style.height = chartSize;
     };
 
