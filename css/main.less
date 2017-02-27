@@ -17,6 +17,7 @@ body{
 
 div.dashboard-container{
     overflow: auto;
+    top: 115px;
 }
 
 div#ltss-mainmenu-container{
@@ -27,6 +28,15 @@ div#LtssMarylandHeaderInfo{
         margin-left: 10px;
     }
 }
+
+
+div#controlBar{
+    padding-top: 5px;
+    label{
+        margin-bottom: 0;
+    }
+}
+
 
 
 
@@ -149,6 +159,14 @@ div.daysToResolve, div.timeBetweenFlags{
 div.outerColumn{
     padding: 0;
 }
+
+@media only screen and (max-width: 1508px){
+    div.dashboard-container{
+        top: 135px;
+    }
+    
+}
+
 @media only screen and (max-width : 1410px) {
 
     
@@ -194,7 +212,12 @@ div.outerColumn{
 
 }
 
+
+
 @media only screen and (max-width :1199px){
+    div.dashboard-container{
+        top: 113px;
+    }
     .panel{
         .panel-body{
             div.loginStats{
@@ -281,6 +304,10 @@ div.outerColumn{
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 769px) {
+
+    div.dashboard-container{
+        top: 140px;
+    }
     .panel{
         .panel-body{
             div.table-responsive{
@@ -308,6 +335,8 @@ div.outerColumn{
     }
 }
 
+
+
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 480px) {
     .panel{
@@ -319,6 +348,12 @@ div.outerColumn{
             }
             
         }
+    }
+}
+
+@media only screen and (max-width: 460px){
+    div.dashboard-container{
+        top: 170px;
     }
 }
 
