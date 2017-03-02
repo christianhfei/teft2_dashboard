@@ -34,7 +34,7 @@ $(document).ready(function () {
 
     var timeAtEachStatusChart = document.getElementById('timeAtEachStatus').getContext('2d');
     var timeAtEachStatusChart = new Chart(timeAtEachStatusChart, {
-        type: 'bar',
+        type: 'horizontalBar',
         options: {
             title: "Average Time per Status of Flag",
             legend: {
@@ -43,7 +43,7 @@ $(document).ready(function () {
             responsive: true,
             maintainAspectRatio: false,
             scales: {
-                yAxes: [{
+                xAxes: [{
                     ticks: {
                         beginAtZero: true
                     }
@@ -51,7 +51,7 @@ $(document).ready(function () {
             }
         },
         data: {
-            labels: ["Flagged (days)", ["Under", "Review", "(days)"], ["Reviewed -", "No further", "action required", "(days)"], ["Reviewed -", "Escalated", "to Incident", "(days)"]],
+            labels: ["Flagged", ["Under Review"], ["Reviewed - ", "No further action required"], ["Reviewed -","Escalated to Incident"]],
             datasets: [
                 {
                     backgroundColor: [
@@ -72,6 +72,51 @@ $(document).ready(function () {
                     ],
                     borderWidth: 1,
                     data: [3, 4, 1, 1],
+                }
+            ]
+        }
+    });
+
+    var loginsByLocationChart = document.getElementById('loginsByLocation').getContext('2d');
+    var loginsByLocationChart = new Chart(loginsByLocationChart, {
+        type: 'horizontalBar',
+        options: {
+            title: "Logins by Location",
+            legend: {
+                display: false
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        },
+        data: {
+            labels: ["Baltimore", ["Annapolis"], ["Rockville"], ["College Park"], 'Laurel', 'Columbia'],
+            datasets: [
+                {
+                    backgroundColor: [
+                        'rgba(235, 0, 0, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1,
+                    data: [160, 143, 112, 98, 85, 63],
                 }
             ]
         }
