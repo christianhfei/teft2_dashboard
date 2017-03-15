@@ -702,13 +702,13 @@ function dataTableAjaxLoad(table, url, params, successFn) {
 
 function ApplyDollarAmt() {
 
-    $(".dollarAmt").each(function () {
-        if (isNaN(this.value) || this.value == "") {
-            return;
-        }
-        var amount = parseFloat(this.value).toFixed(2);
-        this.value = amount;
-    });
+    //$(".dollarAmt").each(function () {
+    //    if (isNaN(this.value) || this.value == "") {
+    //        return;
+    //    }
+    //    var amount = parseFloat(this.value).toFixed(2);
+    //    this.value = amount;
+    //});
 }
 
 function FormatDollarAmt(value) {
@@ -719,13 +719,13 @@ function FormatDollarAmt(value) {
     return amount = parseFloat(noCommaValue).toFixed(2);
 }
 
-$(".dollarAmt").live("change", function () {
+/*$(".dollarAmt").live("change", function () {
     if (isNaN(this.value) || this.value == "") {
         return;
     }
     var amount = parseFloat(this.value).toFixed(2);
     this.value = amount;
-});
+});*/
 
 function parseDates(data) {
     var dateFields = new Array();

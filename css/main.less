@@ -84,10 +84,32 @@ div#controlBar{
             padding: 0;
         }
 
-        div.recentLogins{
+        div.flagInfo, div.recentLogins{
             div.row{
                 div.col-xs-12.col-sm-12.col-md-12.col-lg-12{
                     padding: 0;
+                    
+                }
+                &.tab-content{
+                    border:1px solid rgb(221,221,221);
+                    border-top: none;
+                    padding: 0;
+                    div.tab-pane{
+                        #unopenedFilter{
+                            padding: 5px 0 0 5px;
+                            select.form-control.input-sm{
+                                width: auto !important;
+                            }
+                        }
+                        div.table-responsive{
+                            table.table.table-condensed{
+                                margin-bottom: 0;
+                                small{
+                                    display: inline-block;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -95,10 +117,8 @@ div#controlBar{
         div.loginStats{
             font-weight: bold;
             color: #B8B8B8;            
-            text-align: center; 
+            text-align: center;
             div.outerContainer{
-                position: relative;
-                top: 75px;
                 div.successfulLogins{
                     padding-bottom: 5px;
                     border-bottom: 1px solid rgba(220,220,220,.5);
@@ -109,6 +129,8 @@ div#controlBar{
                         font-size: 210%;
                         margin-bottom: -5px;
                     }
+                    
+                    
                 }
                 div.totalLogins{
                     margin-top: 5px;
@@ -118,6 +140,47 @@ div#controlBar{
                         color: @blue;
                         font-size: 210%;
                         margin-bottom: -5px;
+                    }
+                    div.row.collapse{
+                        ul{li{
+                            span{
+                                color: @red;
+                            }
+                        }}
+                    }
+                }
+                div.totalLogins, div.successfulLogins{
+                    div.row.collapse{
+                        ul{
+                            li{
+                                span{
+                                    font-size: 120%;
+                                }
+                            }
+                        }
+                    }
+                    button.expandButton{
+                        color: gray;
+                        background: transparent;
+                        border: none;
+                        span.glyphicon.glyphicon-chevron-down, span.glyphicon-chevron-up{
+                            color: rgb(221,221,221);
+                            font-size: 100%;
+                            display: block;
+                            margin-bottom: 1px;
+                        }
+
+                        &[aria-expanded="true"]{
+                            span.glyphicon-chevron-down{
+                                display: none;
+                            }
+                        }
+                        &[aria-expanded="false"]{
+                            span.glyphicon-chevron-up{
+                                display: none;
+                            }
+                        }
+                        
                     }
                 }
             }
@@ -155,6 +218,16 @@ div#controlBar{
                            }
                            
                        } 
+                    }
+                }
+            }
+        }
+
+        div#frequencyOfFlags{
+            form.form-inline{
+                div.form-group{
+                    select.form-control{
+                        width: auto !important;
                     }
                 }
             }
@@ -348,8 +421,11 @@ div.outerColumn{
     }
 }
 
+
+
 /* Small Devices, Tablets */
-@media only screen and (max-width : 769px) {
+@media only screen and (max-width : 767px) {
+
 
     div.dashboard-container{
         top: 140px;
@@ -359,6 +435,20 @@ div.outerColumn{
             div.table-responsive{
                 max-height: 250px;
             }
+
+            div.flagInfo, div.recentLogins{
+                div.row.tab-content{
+                        padding: 0;
+                        margin: 0;
+                        div.table-responsive{
+                            margin-bottom: 0;
+                            box-sizing: border-box;
+                            border: none;
+                        }
+
+                    }
+                }
+            
 
             div.flagStats{
                 padding: 0;

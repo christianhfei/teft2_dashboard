@@ -1,4 +1,9 @@
-$(document).ready(function () {
+
+
+$(document).ready(function () {   
+    
+
+   
 
     var setHeight = function(chart) {
         var chartElement = document.getElementById(chart),
@@ -96,7 +101,7 @@ $(document).ready(function () {
             }
         },
         data: {
-            labels: ["Baltimore", ["Annapolis"], ["Rockville"], ["College Park"], 'Laurel', 'Columbia'],
+            labels: ["Baltimore", ["Annapolis"], ["Rockville"], ["College Park"], 'Laurel', 'Columbia', "Brookview", "Kitzmiller", "Deer Park", "Vienna", "Accident"],
             datasets: [
                 {
                     backgroundColor: [
@@ -105,7 +110,12 @@ $(document).ready(function () {
                         'rgba(255, 206, 86, 0.2)',
                         'rgba(75, 192, 192, 0.2)',
                         'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
+                        'rgba(255, 159, 64, 0.2)',
+                        "rgba(120,12,232, 0.2)",
+                        "rgba(43, 101, 150, 0.2)",
+                        'rgba(232,136,12,0.2)',
+                        "rgba(232,112,61, 0.2)",
+                        "rgba(150, 75, 143, 0,2)"
                     ],
                     borderColor: [
                         'rgba(255,99,132,1)',
@@ -113,19 +123,17 @@ $(document).ready(function () {
                         'rgba(255, 206, 86, 1)',
                         'rgba(75, 192, 192, 1)',
                         'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
+                        'rgba(255, 159, 64, 1)',
+                        "rgba(120,12,232, 1)",
+                        "rgba(43, 101, 150, 1)",
+                        'rgba(232,136,12,1)',
+                        "rgba(232,112,61, 1)",
+                        "rgba(150, 75, 143, 1)"
                     ],
                     borderWidth: 1,
-                    data: [160, 143, 112, 98, 85, 63],
+                    data: [160, 143, 112, 98, 85, 63, 8, 6, 5, 1, 1],
                 }
             ]
         }
     });
-
-    
-
-    
-    
-
-
 });
