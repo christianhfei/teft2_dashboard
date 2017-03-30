@@ -72,7 +72,7 @@ div#controlBar{
             display: inline-block;
             font-size: 110%;
             color: @blue;
-            
+            font-weight: bold;
         } 
         span.pull-right{
             margin-top: -29px;
@@ -192,19 +192,19 @@ div#controlBar{
             div.outerContainer{
                 div.row{
                     &:first-of-type{
-                        margin-bottom: 30px;
-                        padding-top: 20px;
+                        // margin-bottom: 30px;
+                        padding-top: 10px;
 
                     }
                     div{                       
                        p.lead{
                            margin-bottom: 0;
                             font-size: 16px;
-                            border: 1px solid #ccc;
+                            //border: 1px solid #ccc;
                             text-align: center;
-                            border-radius: 4px;
+                            //border-radius: 4px;
                             padding: 8px 2px 8px 2px;
-                            box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.03);
+                            //box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.03);
                            span{
                                 vertical-align: middle;
                                 span{
@@ -277,6 +277,15 @@ div.daysToResolve, div.timeBetweenFlags{
 }   
 div.outerColumn{
     padding: 0;
+    div.col-xs-12.col-sm-12.col-md-12.col-lg-12.locationData{
+        div.panel.panel-default{
+            div.panel-body{
+                h4{
+                    font-weight: bold !important;
+                }
+            }
+        }
+    }
 }
 
 div#myModal{
